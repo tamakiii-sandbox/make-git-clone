@@ -5,6 +5,7 @@ help:
 
 install: \
 	dependencies \
+	vendor \
 	vendor/tamakiii-sandbox \
 	vendor/tamakiii-sandbox/master-push \
 	vendor/tamakiii-sandbox/make-git-clone \
@@ -22,7 +23,7 @@ vendor/tamakiii-sandbox/master-push:
 vendor/tamakiii-sandbox/make-git-clone:
 	-git clone https://github.com/tamakiii-sandbox/make-git-clone.git $@
 
-vendor/tamakiii-sandbox: vendor
+vendor/tamakiii-sandbox:
 	mkdir -p $@
 
 vendor:
