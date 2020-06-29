@@ -22,10 +22,10 @@ vendor/tamakiii-sandbox/make-git-clone: vendor/tamakiii-sandbox
 	-git clone https://github.com/tamakiii-sandbox/make-git-clone.git $@
 
 vendor/tamakiii-sandbox: vendor
-	mkdir -p $@
+	-mkdir $@
 
 vendor:
-	mkdir -p $@
+	-mkdir $@
 
 clean:
 	rm -rf vendor
