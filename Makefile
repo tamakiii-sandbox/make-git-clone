@@ -5,8 +5,6 @@ help:
 
 install: \
 	dependencies \
-	vendor \
-	vendor/tamakiii-sandbox \
 	vendor/tamakiii-sandbox/master-push \
 	vendor/tamakiii-sandbox/make-git-clone \
 	build
@@ -17,11 +15,19 @@ build:
 dependencies:
 	type git > /dev/null
 
-vendor/tamakiii-sandbox/master-push:
-	-git clone https://github.com/tamakiii-sandbox/master-push.git $@
+vendor/tamakiii-sandbox/master-push: \
+	vendor/tamakiii-sandbox \
+	vendor/tamakiii-sandbox/master-push/.git
 
-vendor/tamakiii-sandbox/make-git-clone:
-	-git clone https://github.com/tamakiii-sandbox/make-git-clone.git $@
+vendor/tamakiii-sandbox/make-git-clone: \
+	vendor/tamakiii-sandbox \
+	vendor/tamakiii-sandbox/make-git-clone/.git
+
+vendor/tamakiii-sandbox/master-push/.git:
+	git clone https://github.com/tamakiii-sandbox/master-push.git $@
+
+vendor/tamakiii-sandbox/make-git-clone/.git:
+	git clone https://github.com/tamakiii-sandbox/make-git-clone.git $@
 
 vendor/tamakiii-sandbox:
 	mkdir -p $@
