@@ -24,10 +24,10 @@ vendor/tamakiii-sandbox/make-git-clone: \
 	vendor/tamakiii-sandbox/make-git-clone/.git
 
 vendor/tamakiii-sandbox/master-push/.git:
-	git clone https://github.com/tamakiii-sandbox/master-push.git $@
+	git clone https://github.com/tamakiii-sandbox/master-push.git $(@D)
 
 vendor/tamakiii-sandbox/make-git-clone/.git:
-	git clone https://github.com/tamakiii-sandbox/make-git-clone.git $@
+	git clone https://github.com/tamakiii-sandbox/make-git-clone.git $(@D)
 
 vendor/tamakiii-sandbox:
 	mkdir -p $@
